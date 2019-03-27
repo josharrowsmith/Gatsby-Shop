@@ -3,6 +3,7 @@ const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
 
+
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   return new Promise((resolve, reject) => {
@@ -53,8 +54,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
       // ==== Products (Shopify Products) ====  
       .then(() => {
-        graphql(
-          `
+        graphql(`
           {
             allShopifyProduct {
               edges {
@@ -64,25 +64,20 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               }
             }
           }
-          `
-        ).then(result => {
-          if (result.errors) {
-            console.log(result.errors)
-            reject(result.errors)
-          }
-          const postTemplate = path.resolve('./src/templates/product.js')
-        // pass handle to fliter
-        result.data.allShopifyProduct.edges.forEach(({ node }) => {
+        `).then(result => {
+          result.data.allShopifyProduct.edges.forEach(({ node }) => {
             createPage({
               path: `/product/${node.handle}/`,
-              component: slash(postTemplate),
+              component: path.resolve(`./src/templates/product.js`),
               context: {
-                handle: node.handle
+                // Data passed to context is available
+                // in page queries as GraphQL variables.
+                handle: node.handle,
               },
             })
           })
+          resolve()
         })
-        resolve()
       }) 
     // ==== END PRODUCTS ====         
     })

@@ -1,26 +1,29 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Header from '../components/header'
 import Image from 'gatsby-image'
-import ProductForm from '../components/ProductForm'
 
 //Quick styling for now 
 const Wrapper = styled.div`
     position: absolute;
     display: grid;
-    top: 5%;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    padding: 50px;
+    top: 12%;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-items: center;
 `
 const Title = styled.p`
     color: black;
     text-decoration: none;
+    text-align: center;
 `
 const ImageContainer = styled(Image)`
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 `
 
 export default class PageTemplate extends React.Component {
@@ -38,10 +41,10 @@ export default class PageTemplate extends React.Component {
          <Wrapper>
            {productss.products.map(x => (
             <Link to={`/product/${x.handle}/`}>
-             <Title>{x.title}&nbsp;{x.variants[0].price}</Title>
              <ImageContainer 
                fluid={x.images[0].localFile.childImageSharp.fluid}
              />
+              <Title>{x.title}<br></br>{x.variants[0].price}</Title>
              </Link>
            ))}
          </Wrapper>
@@ -51,7 +54,7 @@ export default class PageTemplate extends React.Component {
 }
 
 
-export const pageQuery = graphql`
+export const categoryQuery = graphql`
   query categoryQuery($handle: String!) {
     allShopifyCollection {
       edges {

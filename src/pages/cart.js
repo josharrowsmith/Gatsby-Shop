@@ -1,6 +1,7 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Header from '../components/header'
-import Cart from '../components/cart'
+import Cart from '../components/Cart/index'
 
 
 export default class CartPage extends React.Component {
@@ -20,8 +21,8 @@ export default class CartPage extends React.Component {
   }
 }
 
-export const CartQuery = graphql`
-  query {
+export const cartQuery = graphql`
+  query cartQuery {
     allShopifyCollection {
       edges {
         node {

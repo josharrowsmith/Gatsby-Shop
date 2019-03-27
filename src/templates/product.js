@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Header from '../components/header'
@@ -47,8 +48,8 @@ export default class PostTemplate extends React.Component {
   }
 }
 
-export const PostQuery = graphql`
-  query PostPage ($handle: String!) {
+export const postQuery = graphql`
+  query postPage ($handle: String!) {
     shopifyProduct(handle: { eq: $handle }) {
         id
         title
