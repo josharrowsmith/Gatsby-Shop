@@ -5,7 +5,6 @@ import Images from './images'
 import Image2 from './images2'
 import Image3 from './images3'
 
-
 const Text = styled.div`
   color : white;
   font-size: 5rem;
@@ -34,7 +33,7 @@ export default class slider extends React.Component {
                 Welcome this is slide {currentSlide + 1}
                 </Text>
                 )}
-        >
+            >
             <Images/>
             <Image2/>
             <Image3/>
