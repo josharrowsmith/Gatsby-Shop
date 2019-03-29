@@ -1,12 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components';
 
+
+const Label = styled.label`
+    text-transform: uppercase;
+    font-weight: 900;
+    display: block;
+`
+
+const SelectSize = styled.select`
+    width: 50px;
+    height: 30px;
+`
 const VariantSelector = props => {
   const { option } = props
   return (
     <>
-      <label htmlFor={option.name}>{option.name} </label>
-      <select
+      <Label htmlFor={option.name}>{option.name} </Label>
+      <SelectSize
         name={option.name}
         key={option.id}
         onChange={props.onChange}
@@ -19,7 +31,7 @@ const VariantSelector = props => {
             >{`${value}`}</option>
           )
         })}
-      </select>
+      </SelectSize>
       <br/>
     </>
   )

@@ -1,8 +1,33 @@
 import React, { useState, useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
-
+import styled from 'styled-components';
 import StoreContext from '../../context/StoreContext'
 import VariantSelector from './VariantSelector'
+
+const Button = styled.button`
+    width: 200px;
+    height: 50px;
+    background: black;
+    color: white;
+    border-radius: 35px;
+    border: 5px black solid;
+    margin-top: 20px;
+`
+
+const Label = styled.label`
+    text-transform: uppercase;
+    font-weight: 800;
+    display: block;
+`
+const Input = styled.input`
+    width: 50px;
+    height: 30px;
+    font-weight: 500;
+`
+const Price = styled.h3`
+    padding: 0;
+    margin: 0;
+`
 
 const ProductForm = props => {
   const [quantity, setQuantity] = useState(1)
@@ -68,10 +93,10 @@ const ProductForm = props => {
 
   return (
     <>
-      <h3>${productVariant.price}</h3>
+      <Price>${productVariant.price}</Price>
       {variantSelectors}
-      <label htmlFor="quantity">Quantity </label>
-      <input
+      <Label htmlFor="quantity">Quantity: </Label>
+      <Input
         type="number"
         id="quantity"
         name="quantity"
@@ -81,9 +106,9 @@ const ProductForm = props => {
         value={quantity}
       />
       <br/>
-      <button type="submit" disabled={!available} onClick={handleAddToCart}>
+      <Button type="submit" disabled={!available} onClick={handleAddToCart}>
         Add to Cart
-      </button>
+      </Button>
       {!available && <p>This Product is out of Stock!</p>}
     </>
   )

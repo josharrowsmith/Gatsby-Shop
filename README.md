@@ -10,6 +10,11 @@ Building a web store with gatsby and shopify for the backend
 - [ ] Create blog pages
 - [X] Make a navbar with cart
 - [X] Create a Cart
+- [X] Slider for homepage
+- [ ] fix single product page   
 - [ ] Learn context instead of redux
-- [ ] Make cart work
+- [X] Make cart work
 - [ ] styling 
+- [ ] Can't to checkout until i pay for a plan  :(
+- [ ] auth 
+- [ ] Mobile styling

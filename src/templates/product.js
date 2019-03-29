@@ -9,10 +9,11 @@ import ProductForm from '../components/ProductForm'
 const Wrapper = styled.div`
     position: absolute;
     display: grid;
-    top: 5%;
+    top: 15%;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     padding: 50px;
+    grid-gap: 100px;
 `
 const ImageContainer = styled(Image)`
     width: 100%;
@@ -33,13 +34,14 @@ export default class PostTemplate extends React.Component {
         <Header categories={categories} currentPage={this.props.location.pathname}/>
         <Wrapper>
         <div>
-        <h1>{products.title}</h1>
         <ImageContainer
         fluid={products.images[0].localFile.childImageSharp.fluid}>
         </ImageContainer>
         </div>
         <div>
-          <h1>details</h1>
+        <h1>{products.title}</h1>
+          <h2>Description</h2>
+          <p>{products.descriptionHtml}</p>
           <ProductForm product={products}/>
         </div>
         </Wrapper>
