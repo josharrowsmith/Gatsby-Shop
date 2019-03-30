@@ -120,6 +120,7 @@ class Layout extends React.Component {
 
     return (
       <StoreContext.Provider value={this.state.store}>
+      <GlobalStyle/>
         {children}  
       </StoreContext.Provider>
     )
