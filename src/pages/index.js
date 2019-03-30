@@ -9,6 +9,9 @@ const Wrapper = styled.div`
     top: 10%;
     width: 100%;
     overflow: hidden;
+    @media screen and (max-width: 768px) {
+      top:12%;
+    }
 `
 
 export default class IndexPage extends React.Component {

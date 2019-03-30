@@ -17,7 +17,7 @@ const Image2 = () => (
     `}
     render={data => (
       <>
-       <Img fluid={data.Image2.childImageSharp.fluid} />
+       <Img fluid={data.Image2.childImageSharp.fluid} style={{height: '90vh'}} />
       </>
     )}
   />

@@ -15,6 +15,12 @@ const Wrapper = styled.div`
     margin-left: 100px;
     margin-right: 100px;
     justify-items: center;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      margin: 0;
+      width: 100vw;
+      justify-content: center;
+    }
 `
 const Title = styled.p`
     color: black;

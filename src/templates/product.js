@@ -14,11 +14,23 @@ const Wrapper = styled.div`
     width: 100%;
     padding: 50px;
     grid-gap: 100px;
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+        padding: 0;
+        width: 100vw;
+        grid-gap: 20px;
+    }
 `
 const ImageContainer = styled(Image)`
     width: 100%;
     height: 75vh;
 `
+
+const Details = styled.div`
+    justify-self: center;
+    padding: 10px 0 20px 0;
+`
+
 
 export default class PostTemplate extends React.Component {
   constructor(props) {
@@ -38,12 +50,12 @@ export default class PostTemplate extends React.Component {
         fluid={products.images[0].localFile.childImageSharp.fluid}>
         </ImageContainer>
         </div>
-        <div>
+        <Details>
         <h1>{products.title}</h1>
           <h2>Description</h2>
           <p>{products.descriptionHtml}</p>
           <ProductForm product={products}/>
-        </div>
+        </Details>
         </Wrapper>
       </div>
     )

@@ -11,17 +11,30 @@ const Wrapper = styled.div`
     grid-template-columns: 1fr;
     width: 100%;
     padding: 50px;
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      top: 12%;
+      margin: 0 5% 0 5%;
+    }
 `
 const Header = styled.h1`
     text-transform: uppercase;
     font-size: 1.5rem;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
 `
 const SubTitle = styled.div`
     display: grid;
     grid-template-columns: 1fr 50% 1fr 1fr;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 `
 const SubText = styled.h3`
-    
+    @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+    }
 `
 const Grid = styled.div`
     display: grid;
@@ -33,6 +46,9 @@ const Total = styled.div`
     grid-template-columns: 1fr;
     justify-items: flex-end;
     margin-right: 10%;
+    @media screen and (max-width: 768px) {
+      margin-right: 15%;
+    }
 `
 const TotalText = styled.h3`
 

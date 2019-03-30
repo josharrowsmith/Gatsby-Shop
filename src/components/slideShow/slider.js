@@ -13,6 +13,12 @@ const Text = styled.div`
   left: -22vw;
   width: 100vw;
   height: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    text-align: center;
+    left: -50vw;
+    top: 20vh;
+  }
 `
 
 export default class slider extends React.Component {
@@ -25,8 +31,7 @@ export default class slider extends React.Component {
     return(
 
         <Carousel 
-            style={{height: "90vh"}} 
-            autoplay={true} 
+            autoplay={false} 
             wrapAround={true}
             renderTopCenterControls={({ currentSlide }) => (
                 <Text>

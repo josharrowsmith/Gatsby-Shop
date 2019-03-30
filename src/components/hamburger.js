@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 const Line = styled.span`
   width: 35px;
   height: 2px;
-  background-color: #ecf0f1;
+  background-color: black;
   display: block;
   margin: 6px auto;
   transition: all 0.3s ease-in-out;
