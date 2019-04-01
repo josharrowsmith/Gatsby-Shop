@@ -12,9 +12,15 @@ Building a web store with gatsby and shopify for the backend
 - [X] Create a Cart
 - [X] Slider for homepage
 - [X] fix single product page   
-- [ ] Learn context instead of redux
+- [X] Learn context instead of redux
 - [X] Make cart work
 - [X] styling 
 - [ ] Can't to checkout until i pay for a plan  :(
 - [ ] auth 
-- [ ] Mobile styling
+- [X] Mobile styling
+
+# Screenshots
+![Alt Text](homepage.PNG)
+![Alt Text](shirts-cat.PNG)
+![Alt Text](single.PNG)
+![Alt Text](cart.PNG)
