@@ -3,6 +3,8 @@
 # The Project
 Building a web store with gatsby and shopify for the backend
 
+# Check it out at
+https://socialshop.netlify.com/
 
 # Things to do and improvements
 - [X] Basic layout
